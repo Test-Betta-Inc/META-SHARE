@@ -13,18 +13,18 @@ from metashare.repository.models import inputInfoType_model, \
 # Fields that need the ComboWidget/MultiComboWidget with autocomplete functionality
 # to use with languageId,languageName pairs.
 LANGUAGE_ID_NAME_FIELDS = {
-   inputInfoType_model:
-       {'type': 'multiple', 'id': "languageId", 'name': "languageName"},
-   outputInfoType_model:
-       {'type': 'multiple', 'id': "languageId", 'name': "languageName"},
-   languageInfoType_model:
-       {'type': 'single', 'id': "languageId", 'name': "languageName"},
-   metadataInfoType_model:
-       {'type': 'multiple', 'id': "metadataLanguageId", 'name': "metadataLanguageName"},
-   documentInfoType_model:
-       {'type': 'single', 'id': "documentLanguageId", 'name': "documentLanguageName"},
-   annotationInfoType_model:
-       {'type': 'single', 'id': "tagsetLanguageId", 'name': "tagsetLanguageName"},
+   # inputInfoType_model:
+   #     {'type': 'multiple', 'id': "languageId", 'name': "languageName"},
+   # outputInfoType_model:
+   #     {'type': 'multiple', 'id': "languageId", 'name': "languageName"},
+   # languageInfoType_model:
+   #     {'type': 'single', 'id': "languageId", 'name': "languageName"},
+   # metadataInfoType_model:
+   #     {'type': 'multiple', 'id': "metadataLanguageId", 'name': "metadataLanguageName"},
+   # documentInfoType_model:
+   #     {'type': 'single', 'id': "documentLanguageId", 'name': "documentLanguageName"},
+   # annotationInfoType_model:
+   #     {'type': 'single', 'id': "tagsetLanguageId", 'name': "tagsetLanguageName"},
 }
 
 
@@ -199,7 +199,10 @@ class SchemaModelLookup(object):
         - append '_model_inline'.
         '''
         suffix_length = len("Type_model")
-        modelname_without_suffix = model_class_name[:-suffix_length]
+        if model_class_name == 'documentUnstructuredString_model':
+            modelname_without_suffix = model_class_name[:-len("_model")]
+        else:
+            modelname_without_suffix = model_class_name[:-suffix_length]
         inline_class_name = modelname_without_suffix + "_model_inline"
         if parent_model_class_name:
             context_specific_name = inline_class_name + "_" + parent_model_class_name

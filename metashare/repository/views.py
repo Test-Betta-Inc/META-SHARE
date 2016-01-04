@@ -86,62 +86,58 @@ MEMBER_TYPES = type('MemberEnum', (), dict(GOD=100, FULL=3, ASSOCIATE=2, NON=1))
 # is required at a minimum to be able to download the associated resource
 # straight away; otherwise the licence requires a hard-copy signature
 LICENCEINFOTYPE_URLS_LICENCE_CHOICES = {
-  'AGPL': (MEDIA_URL + 'licences/GNU_agpl-3.0.htm', MEMBER_TYPES.NON),
-  'LGPL': (MEDIA_URL + 'licences/GNU_lgpl-3.0.htm', MEMBER_TYPES.NON),
-  'CC-ZERO': (MEDIA_URL + 'licences/CC0v1.0.htm', MEMBER_TYPES.NON),
-  'CC-BY-NC-ND': (MEDIA_URL + 'licences/CC-BYNCNDv3.0.htm', MEMBER_TYPES.NON),
-  'CC-BY-NC-SA': (MEDIA_URL + 'licences/CC-BYNCSAv3.0.htm', MEMBER_TYPES.NON),
-  'CC-BY-NC': (MEDIA_URL + 'licences/CC-BYNCv3.0.htm', MEMBER_TYPES.NON),
-  'CC-BY-ND': (MEDIA_URL + 'licences/CC-BYNDv3.0.htm', MEMBER_TYPES.NON),
-  'CC-BY-SA': (MEDIA_URL + 'licences/CC-BYSAv3.0.htm', MEMBER_TYPES.NON),
-  'CC-BY': (MEDIA_URL + 'licences/CC-BYv3.0.htm', MEMBER_TYPES.NON),
-  'MSCommons-BY': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BY_v1.0.htm',
-                   MEMBER_TYPES.FULL),
-  'MSCommons-BY-NC': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYNC_v1.0.htm',
-                      MEMBER_TYPES.FULL),
-  'MSCommons-BY-NC-ND': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYNCND_' \
-                         'v1.0.htm', MEMBER_TYPES.FULL),
-  'MSCommons-BY-NC-SA': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYNCSA' \
-                         '_v1.0.htm', MEMBER_TYPES.FULL),
-  'MSCommons-BY-ND': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYND_v1.0.htm',
-                      MEMBER_TYPES.FULL),
-  'MSCommons-BY-SA': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYSA_v1.0.htm',
-                      MEMBER_TYPES.FULL),
-  'MS-C-NoReD-FF': (MEDIA_URL + 'licences/META-SHARE_Commercial_' \
-        'NoRedistribution_For-a-Fee_v1.0.htm', MEMBER_TYPES.GOD),
-  'MS-C-NoReD': (MEDIA_URL + 'licences/META-SHARE_Commercial_' \
-        'NoRedistribution_v1.0.htm', MEMBER_TYPES.GOD),
-  'MS-C-NoReD-ND-FF': (MEDIA_URL + 'licences/META-SHARE_Commercial_' \
-        'NoRedistribution_NoDerivatives_For-a-fee-v1.0.htm', MEMBER_TYPES.GOD),
-  'MS-C-NoReD-ND': (MEDIA_URL + 'licences/META-SHARE_Commercial_' \
-        'NoRedistribution_NoDerivatives-v1.0.htm', MEMBER_TYPES.GOD),
-  'MS-NC-NoReD-ND-FF': (MEDIA_URL + 'licences/META-SHARE_NonCommercial' \
-        '_NoRedistribution_NoDerivatives_For-a-fee-v1.0.htm', MEMBER_TYPES.GOD),
-  'MS-NC-NoReD-ND': (MEDIA_URL + 'licences/META-SHARE_NonCommercial_' \
-        'NoRedistribution_NoDerivatives-v1.0.htm', MEMBER_TYPES.GOD),
-  'MS-NC-NoReD-FF': (MEDIA_URL + 'licences/META-SHARE_NonCommercial' \
-        '_NoRedistribution_For-a-Fee-v1.0.htm', MEMBER_TYPES.GOD),
-  'MS-NC-NoReD': (MEDIA_URL + 'licences/META-SHARE_NonCommercial_' \
-        'NoRedistribution-v1.0.htm', MEMBER_TYPES.GOD),
-  'ELRA_EVALUATION': (MEDIA_URL + 'licences/EVALUATION.htm', MEMBER_TYPES.GOD),
-  'ELRA_VAR': (MEDIA_URL + 'licences/VAR-v3_2007.htm', MEMBER_TYPES.GOD),
-  'ELRA_END_USER': (MEDIA_URL + 'licences/ENDUSER-v3_2007.htm',
-                    MEMBER_TYPES.GOD),
+  'AGPL': (MEDIA_URL + 'licences/AGPL.pdf', MEMBER_TYPES.NON),
+  'LGPL': (MEDIA_URL + 'licences/LGPL.pdf', MEMBER_TYPES.NON),
+  'CC-ZERO': (MEDIA_URL + 'licences/CC-ZERO.pdf', MEMBER_TYPES.NON),
+  'CC-BY-NC-ND': (MEDIA_URL + 'licences/CC-BY-NC-ND.pdf', MEMBER_TYPES.NON),
+  'CC-BY-NC-SA': (MEDIA_URL + 'licences/CC-BY-NC-SA.pdf', MEMBER_TYPES.NON),
+  'CC-BY-NC': (MEDIA_URL + 'licences/CC-BY-NC.pdf', MEMBER_TYPES.NON),
+  'CC-BY-ND': (MEDIA_URL + 'licences/CC-BY-ND.pdf', MEMBER_TYPES.NON),
+  'CC-BY-SA': (MEDIA_URL + 'licences/CC-BY-SA.pdf', MEMBER_TYPES.NON),
+  'CC-BY': (MEDIA_URL + 'licences/CC-BY.pdf', MEMBER_TYPES.NON),
+  'PDDL': (MEDIA_URL + 'licences/PDDL.pdf', MEMBER_TYPES.NON),
+  'ODC-BY': (MEDIA_URL + 'licences/ODC-BY.pdf', MEMBER_TYPES.NON),
+  'ODbL': (MEDIA_URL + 'licences/ODbL.pdf', MEMBER_TYPES.NON),
+  # 'MSCommons-BY': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BY_v1.0.htm',
+  #                  MEMBER_TYPES.FULL),
+  # 'MSCommons-BY-NC': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYNC_v1.0.htm',
+  #                     MEMBER_TYPES.FULL),
+  # 'MSCommons-BY-NC-ND': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYNCND_' \
+  #                        'v1.0.htm', MEMBER_TYPES.FULL),
+  # 'MSCommons-BY-NC-SA': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYNCSA' \
+  #                        '_v1.0.htm', MEMBER_TYPES.FULL),
+  # 'MSCommons-BY-ND': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYND_v1.0.htm',
+  #                     MEMBER_TYPES.FULL),
+  # 'MSCommons-BY-SA': (MEDIA_URL + 'licences/META-SHARE_COMMONS_BYSA_v1.0.htm',
+  #                     MEMBER_TYPES.FULL),
+  'MS-NoReD-FF': (MEDIA_URL + 'licences/MS-NoReD-FF.pdf', MEMBER_TYPES.GOD),
+  'MS-NoReD': (MEDIA_URL + 'licences/MS-NoReD.pdf', MEMBER_TYPES.GOD),
+  'MS-NoReD-ND-FF': (MEDIA_URL + 'licences/MS-NoReD-ND-FF.pdf', MEMBER_TYPES.GOD),
+  'MS-NoReD-ND': (MEDIA_URL + 'licences/MS-NoReD-ND.pdf', MEMBER_TYPES.GOD),
+  'MS-NC-NoReD-ND-FF': (MEDIA_URL + 'licences/MS-NC-NoReD-ND-FF.pdf', MEMBER_TYPES.GOD),
+  'MS-NC-NoReD-ND': (MEDIA_URL + 'licences/MS-NC-NoReD-ND.pdf', MEMBER_TYPES.GOD),
+  'MS-NC-NoReD-FF': (MEDIA_URL + 'licences/MS-NC-NoReD-FF.pdf', MEMBER_TYPES.GOD),
+  'MS-NC-NoReD': (MEDIA_URL + 'licences/MS-NC-NoReD.pdf', MEMBER_TYPES.GOD),
+  'ELRA_EVALUATION': (MEDIA_URL + 'licences/ELRA_EVALUATION.pdf', MEMBER_TYPES.GOD),
+  'ELRA_VAR': (MEDIA_URL + 'licences/ELRA_VAR.pdf', MEMBER_TYPES.GOD),
+  'ELRA_END_USER': (MEDIA_URL + 'licences/ELRA_END_USER.pdf', MEMBER_TYPES.GOD),
+  'CLARIN_PUB': (MEDIA_URL + 'licences/CLARIN_PUB.pdf', MEMBER_TYPES.GOD),
+  'CLARIN_ACA-NC': (MEDIA_URL + 'licences/CLARIN_ACA-NC.pdf', MEMBER_TYPES.GOD),
+  'CLARIN_ACA': (MEDIA_URL + 'licences/CLARIN_ACA.pdf', MEMBER_TYPES.GOD),
+  'CLARIN_RES': (MEDIA_URL + 'licences/CLARIN_RES.pdf', MEMBER_TYPES.GOD),
+  'Princeton_Wordnet': (MEDIA_URL + 'licences/Princeton_Wordnet.pdf',
+                        MEMBER_TYPES.NON),
+  'GPL': (MEDIA_URL + 'licences/GPL.pdf', MEMBER_TYPES.NON),
+  'GFDL': (MEDIA_URL + 'licences/GFDL.pdf', MEMBER_TYPES.NON),
+  'ApacheLicence_2.0': (MEDIA_URL + 'licences/ApacheLicence_2.0.pdf',
+                        MEMBER_TYPES.NON),
+  'BSD_3-clause': (MEDIA_URL + 'licences/BSD_3-clause.pdf', MEMBER_TYPES.NON),
+  'BSD_4-clause': (MEDIA_URL + 'licences/BSD_4-clause.pdf', MEMBER_TYPES.NON),
+  'FreeBSD': (MEDIA_URL + 'licences/FreeBSD.pdf', MEMBER_TYPES.NON),
   'proprietary': ('', MEMBER_TYPES.GOD),
-  'CLARIN_PUB': (MEDIA_URL + 'licences/CLARIN_PUB.html', MEMBER_TYPES.GOD),
-  'CLARIN_ACA-NC': (MEDIA_URL + 'licences/CLARIN_ACA.html', MEMBER_TYPES.GOD),
-  'CLARIN_ACA': (MEDIA_URL + 'licences/CLARIN_ACA.html', MEMBER_TYPES.GOD),
-  'CLARIN_RES': (MEDIA_URL + 'licences/CLARIN_RES.html', MEMBER_TYPES.GOD),
-  'Princeton_Wordnet': (MEDIA_URL + 'licences/WordNet-3.0.txt',
-                        MEMBER_TYPES.NON),
-  'GPL': (MEDIA_URL + 'licences/GNU_gpl-3.0.htm', MEMBER_TYPES.NON),
-  'GFDL': (MEDIA_URL + 'licences/GNU_fdl-1.3.htm', MEMBER_TYPES.NON),
-  'ApacheLicence_2.0': (MEDIA_URL + 'licences/Apache-2.0.htm',
-                        MEMBER_TYPES.NON),
-  'BSD': (MEDIA_URL + 'licences/BSD_licence.htm', MEMBER_TYPES.NON),
-  'BSD-style': ('', MEMBER_TYPES.NON),
   'underNegotiation': ('', MEMBER_TYPES.GOD),
-  'other': ('', MEMBER_TYPES.GOD)
+  'nonStandardLicenceTerms': ('', MEMBER_TYPES.NON),
+  # 'other': ('', MEMBER_TYPES.GOD)
 }
 
 
@@ -437,6 +433,7 @@ def view(request, resource_name=None, object_id=None):
     media_types = set(model_utils.get_resource_media_types(resource))
     linguality_infos = set(model_utils.get_resource_linguality_infos(resource))
     license_types = set(model_utils.get_resource_license_types(resource))
+    attribution_details = model_utils.get_resource_attribution_texts(resource)
 
     
     distribution_info_tuple = None
@@ -468,7 +465,7 @@ def view(request, resource_name=None, object_id=None):
             resource_creation_info_tuple = _tuple
         elif _tuple[0] == "Relation":
             relation_info_tuples.append(_tuple)
-        elif _tuple[0] == "Resource component":
+        elif _tuple[0] == "Resource component type":
             resource_component_tuple = _tuple[1]
     
     # Convert resource_component_tuple to nested dictionaries
@@ -496,8 +493,9 @@ def view(request, resource_name=None, object_id=None):
     # Count individual media resource components
     text_counts = []
     video_counts = []
+
     if resource_type == "corpus":
-        for key, value in resource_component_dict['Resource_component']['Corpus_media'].items():
+        for key, value in resource_component_dict['Resource_component_type']['Media_type_component_of_corpus'].items():
             if "Corpus_text" in key and not "numerical" in key and not "ngram" in key:
                 text_counts.append(value)
             elif "Corpus_video" in key:
@@ -508,71 +506,73 @@ def view(request, resource_name=None, object_id=None):
         for media_type in media_types:
             if media_type == "text":
                 resource_component_dicts['text'] = \
-                  resource_component_dict['Resource_component'] \
-                    ['Corpus_media']['Corpus_text']
+                  resource_component_dict['Resource_component_type'] \
+                    ['Media_type_component_of_corpus']['Corpus_text']
             if media_type == "audio":
                 resource_component_dicts['audio'] = \
-                  resource_component_dict['Resource_component'] \
-                    ['Corpus_media']['Corpus_audio']
+                  resource_component_dict['Resource_component_type'] \
+                    ['Media_type_component_of_corpus']['Corpus_audio_component']
             if media_type == "video":
                 resource_component_dicts['video'] = \
-                  resource_component_dict['Resource_component'] \
-                    ['Corpus_media']['Corpus_video']
+                  resource_component_dict['Resource_component_type'] \
+                    ['Media_type_component_of_corpus']['Corpus_video']
             if media_type == "image":
                 resource_component_dicts['image'] = \
-                  resource_component_dict['Resource_component'] \
-                    ['Corpus_media']['Corpus_image']
+                  resource_component_dict['Resource_component_type'] \
+                    ['Media_type_component_of_corpus']['Corpus_image_component']
             if media_type == "textNgram":
                 resource_component_dicts['textNgram'] = \
-                  resource_component_dict['Resource_component'] \
-                     ['Corpus_media']['Corpus_textNgram']
+                  resource_component_dict['Resource_component_type'] \
+                     ['Media_type_component_of_corpus']['Corpus_textNgram']
             if media_type == "textNumerical":
                 resource_component_dicts['textNumerical'] = \
-                  resource_component_dict['Resource_component'] \
-                     ['Corpus_media']['Corpus_textNumerical']
-          
+                  resource_component_dict['Resource_component_type'] \
+                     ['Media_type_component_of_corpus']['Corpus_textNumerical']
+
+
     elif resource_type == "languageDescription":
         for media_type in media_types:
             if media_type == "text":
                 resource_component_dicts['text'] = \
-                  resource_component_dict['Resource_component'] \
-                    ['Language_description_media']['Language_description_text']
+                  resource_component_dict['Resource_component_type'] \
+                    ['Media_type_component_of_language_description']['Language_description_text_component']
             if media_type == "image":
                 resource_component_dicts['image'] = \
-                  resource_component_dict['Resource_component'] \
-                    ['Language_description_media']['Language_description_image']
+                  resource_component_dict['Resource_component_type'] \
+                    ['Media_type_component_of_language_description']['Language_description_image_component']
             if media_type == "video":
                 resource_component_dicts['video'] = \
-                  resource_component_dict['Resource_component'] \
-                    ['Language_description_media']['Language_description_video']
-      
-            
+                  resource_component_dict['Resource_component_type'] \
+                    ['Media_type_component_of_language_description']['Language_description_video_component']
+
+
     elif resource_type == "lexicalConceptualResource":
         for media_type in media_types:
+
             if media_type == "text":
                 resource_component_dicts['text'] = \
-                  resource_component_dict['Resource_component'] \
-                    ['Lexical_conceptual_resource_media'] \
-                    ['Lexical_conceptual_resource_text']
+                  resource_component_dict['Resource_component_type'] \
+                    ['Media_type_component_of_lexical___conceptual_resource'] \
+                    ['Lexical___Conceptual_resource_text_component']
             if media_type == "audio":
                 resource_component_dicts['audio'] = \
-                  resource_component_dict['Resource_component'] \
-                  ['Lexical_conceptual_resource_media'] \
-                  ['Lexical_conceptual_resource_audio']
+                  resource_component_dict['Resource_component_type'] \
+                  ['Media_type_component_of_lexical___conceptual_resource'] \
+                  ['Lexical___Conceptual_resource_audio_component']
             if media_type == "video":
                 resource_component_dicts['video'] = \
-                  resource_component_dict['Resource_component'] \
-                  ['Lexical_conceptual_resource_media'] \
-                  ['Lexical_conceptual_resource_video']
+                  resource_component_dict['Resource_component_type'] \
+                  ['Media_type_component_of_lexical___conceptual_resource'] \
+                  ['Lexical___Conceptual_resource_video_component']
             if media_type == "image":
                 resource_component_dicts['image'] = \
-                  resource_component_dict['Resource_component'] \
-                  ['Lexical_conceptual_resource_media'] \
-                  ['Lexical_conceptual_resource_image']
+                  resource_component_dict['Resource_component_type'] \
+                  ['Media_type_component_of_lexical___conceptual_resource'] \
+                  ['Lexical___Conceptual_resource_image_component']
 
     elif resource_type == "toolService":
         resource_component_dicts['toolService'] = \
-          resource_component_dict['Resource_component']
+          resource_component_dict['Resource_component_type']
    
     # Define context for template rendering.
     context = {
@@ -594,6 +594,7 @@ def view(request, resource_name=None, object_id=None):
                 'resource_component_dicts': resource_component_dicts,
                 'resource_component_dict': resource_component_dict,
                 'resourceName': resource_name,
+                'attribution_details': attribution_details,
                 'resourceType': resource_type,
                 'resource_creation_dict': resource_creation_dict,
                 'url': url,
@@ -657,7 +658,7 @@ def tuple2dict(_tuple):
             if isinstance(item[0], basestring):
                 # Replace spaces by underscores for component names.
                 if item[0].find(" "):
-                    _key = item[0].replace(" ", "_")
+                    _key = item[0].replace(" ", "_").replace("/","_")
                 else: 
                     _key = item[0]
                 if _key in _dict:
@@ -678,7 +679,7 @@ def tuple2dict(_tuple):
                 if isinstance(item[0], tuple):
                     # Replace spaces by underscores for element names.
                     if item[0][0].find(" "):
-                        _key = item[0][0].replace(" ", "_")
+                        _key = item[0][0].replace(" ", "_").replace('(',"").replace(")","").replace("/","_").replace("-","_")
                     else: _key = item[0][0]
 
                     # If the item is a date, convert it to real datetime
@@ -746,8 +747,6 @@ class MetashareFacetedSearchView(FacetedSearchView):
                 sqs = sqs.order_by('-view_count', 'resourceNameSort_exact')
             else:
                 sqs = sqs.order_by('resourceNameSort_exact')
-        else:
-            sqs = sqs.order_by('resourceNameSort_exact')
 
         # collect statistics about the query
         starttime = datetime.now()

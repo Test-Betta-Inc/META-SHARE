@@ -160,9 +160,27 @@
 				<div style="clear:both"></div>
 			{% endif %}
 			
+			{% if attribution_details %}
+             <div class="attribution"><label>Attibution details:</label> {{ attribution_details|join:"<br /> " }}</div>
+            {% endif %}
+            {% for key, value in documentation_dict.items %}
+                {% for key1, value1 in value.items %}
+                    {% for key2, value2 in value1.items %}
+                        {% if "Citation" in key1 %}
+                            <div class="citation">
+                                <label>Please, acknowledge use of the resource with the following citation:</label><br/>
+                                {% if value2.Title %}
+								    {% include "repository/resource_view/citation.html" with documentation=value2 type="Citation" %}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
+
 			{% if url %}
 			 	{% for address in url %}
-					<h3 style="font-size:14px;">
+					<h3 style="font-size:14px; margin-top: 1%;">
 						<label>
 							{{ address|urlize }}{% if not forloop.last %},{% endif %}
 						</label>
@@ -287,7 +305,7 @@
 							</label>
 						</div>
 					{% endif %}
-					{% if "Tool_documentation" in key1 %}
+					{% if "Type_of_documentation_for_tools" in key1 %}
 						 <div class="dataline">
 							<label>
 								<strong>Tool Documentation: </strong>{{value1}}
